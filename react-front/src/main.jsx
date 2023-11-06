@@ -26,8 +26,8 @@ const router=createBrowserRouter([
   },
   { path:"/login",
     lazy:async()=>{
-      const{Login2}=await import("./components/login/Login2");
-      return({Component:Login2});
+      const{Login}=await import("./components/login/Login");
+      return({Component:Login});
     }
 
   },

@@ -35,7 +35,7 @@ describe("submitData",function(){
         
         const success_login=await submitData(username,password);
 
-        sinon.assert.calledWith(axiosStub,"http://nginx:80/api/login" ,{
+        sinon.assert.calledWith(axiosStub,"http://reverse_proxy:80/api/login" ,{
             username:username,
             password:password
         })
@@ -57,7 +57,7 @@ describe("submitData",function(){
 
         const success_login=await submitData(username,password);
 
-        sinon.assert.calledWith(axiosStub,"http://nginx:80/api/login" ,{
+        sinon.assert.calledWith(axiosStub,"http://reverse_proxy:80/api/login" ,{
             username:username,
             password:password
         })
