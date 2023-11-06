@@ -1,0 +1,51 @@
+networks:
+  network:
+  
+services:
+  reverse_proxy:
+    container_name: "reverse_proxy"
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: on-failure
+    networks:
+      - network
+
+  frontend:
+    container_name: frontend
+    depends_on:
+      - reverse_proxy
+    build: "./react-front"
+    ports:
+      - 3000:3000
+    restart: on-failure
+    networks:
+      - network
+
+  login:
+    build: "./backend/login_service"
+    container_name: login
+    ports:
+      - "3002:3002"
+    restart: on-failure
+    networks:
+      - network
+
+  cart:
+    build: "./backend/cart_service"
+    container_name: cart
+    ports:
+      - "3004:3004"
+    restart: on-failure
+    networks:
+      - network
+  
+  catalog:
+    build:  "./backend/catalog_service"
+    container_name: catalog
+    ports:
+      - "3005:3005"
+    restart: on-failure
+    networks:
+      - network

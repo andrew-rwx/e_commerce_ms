@@ -1,0 +1,8 @@
+.header-homepage{
+    text-align: center;
+    height: calc(100vh - 56px);
+    background-image: url("background.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    
+}

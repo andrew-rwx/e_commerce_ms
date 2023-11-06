@@ -1,0 +1,12 @@
+CATALOG: Un microservizio che si occupa di prendere da un DB i dati e fornirli all'utente.
+
+LOGIN/LOGOUT: Un microservizio che si occupa della gestione degli accessi degli utenti.
+
+REGISTER: Un microservizio che si occupa della registrazioni degli utenti.
+
+CART: Un microservizio che si occupa dell'aggiunta,eliminazione di elementi in un carrello utente.
+      Si occupa inoltre di mostrare il carrello all'utente ogni volta che viene richiesto.
+
+NOTIFICATION: Un microservizio che si occupa di inviare notifiche specifiche a seconda delle azioni dell'utente
+              Il microservizio notification è in ascolto con un event.listener e i microservizi che voglio parlare
+              con questo microservizio utilizzano un event emitter.
