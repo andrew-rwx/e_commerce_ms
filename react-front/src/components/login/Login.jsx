@@ -8,7 +8,8 @@ async function submitData(username,password){
     password:password
   }
   //la funzione deve contattare il container contenente il servizio di autenticazione
-  axios.post("http://reverse_proxy:80/login_service/api/login",user_dataToSend)
+  //viene utilizzato il server_name nella richiesta per evitare problemi di CORS
+  axios.post("http://localhost/login_service/api/login",user_dataToSend)
     .then((response)=>{
       if(response.status===200){
         //inserisce il token jwt ricevuto nel localStorage dello user

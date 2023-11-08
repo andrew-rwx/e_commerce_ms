@@ -32,7 +32,11 @@ const router=createBrowserRouter([
 
   },
   {
-    path:"/registrati"
+    path:"/registrati",
+    lazy:async()=>{
+      const{Registrati}=await import("./components/registrati/Registrati");
+      return({Component:Registrati})
+    }
   }
 
 

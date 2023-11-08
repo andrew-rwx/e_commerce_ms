@@ -22,6 +22,21 @@ services:
     restart: on-failure
     networks:
       - network
+    
+  mongo_user:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: #credenziali 
+      MONGO_INITDB_ROOT_PASSWORD: #credenziali
+      #default port 27017
+    networks:
+      - network
+  
+  registration:
+    build:
+    container_name: registration
+    ports:
+      - "3003:3003"
 
   login:
     build: "./backend/login_service"
